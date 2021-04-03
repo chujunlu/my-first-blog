@@ -1,12 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton|Ubuntu:400,500|Didact+Gothic|Limelight|Muli');
+
+* {
+	box-sizing: border-box;
+}
+
 body {
-    padding-left: 15px;
+    margin: 0;
 }
 
 .page-header {
-    background-color: #C25100;
+    background-color: #607E8D;
     margin-top: 0;
-    margin-bottom: 40px;
-    padding: 20px 20px 20px 40px;
+    margin-bottom: 4rem;
+    padding: 2rem 2rem 2rem 10rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Ubuntu', cursive;
 }
 
 .page-header h1,
@@ -14,18 +27,19 @@ body {
 .page-header h1 a:visited,
 .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 4rem;
     text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4 {
-    font-family: 'Lobster', cursive;
+.content-container {
+    margin: 2em 10em;
 }
 
 .date {
+    color: #828282;
+}
+
+.comment-count {
     color: #828282;
 }
 
@@ -43,7 +57,7 @@ h4 {
 .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
+    font-size: 2rem;
     margin-right: 20px;
 }
 
@@ -51,9 +65,16 @@ h4 {
     margin-bottom: 70px;
 }
 
-.post h2 a,
-.post h2 a:visited {
-    color: #000000;
+.post h1 a {
+    color: #5F6368;
+}
+
+.post h1 a:hover {
+    color: rgba(29, 78, 216, 1);
+}
+
+.post h2 {
+    color: #5F6368;
 }
 
 .post > .date,
@@ -61,14 +82,29 @@ h4 {
     float: right;
 }
 
+.post > p {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    color: #5F6368;
+}
+
 .btn-default,
 .btn-default:visited {
-    color: #C25100;
-    background: none;
-    border-color: #C25100;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(29, 78, 216, 1);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-width: 1px;
+    border-color: rgba(59, 130, 246, 1);
+    border-radius: 0.25rem;
 }
 
 .btn-default:hover {
-    color: #FFFFFF;
-    background-color: #C25100;
+    background-color: rgba(59, 130, 246, 1);
+    color: rgba(255, 255, 255, 1);
+    border-color: transparent;
+}
+
+.comment {
+    margin: 2rem 2rem 2rem 4rem;
 }

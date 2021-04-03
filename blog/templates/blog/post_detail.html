@@ -4,11 +4,13 @@
     <article class='post'>
         <aside class="actions">
             {% if user.is_authenticated %}
-                <a href="{% url 'post_edit' pk=post.pk %}" class="btn btn-default">
-                    {% include './icons/pencil-fill.svg' %}
+                <a href="{% url 'post_edit' pk=post.pk %}">
+                    <button class="btn-default">
+                        {% include './icons/pencil-fill.svg' %}
+                    </button>
                 </a>
-                <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}">
-                    <span class="glyphicon glyphicon-remove"></span>
+                <a href="{% url 'post_remove' pk=post.pk %}">
+                    <button class="btn-default">Remove</button>
                 </a>
             {% endif %}
         </aside>
@@ -17,11 +19,15 @@
                 {{ post.published_date }}
             </div>
         {% else %}
-            <a href="{% url 'post_publish' pk=post.pk %}" class="btn btn-default">Publish</a>
+            <a href="{% url 'post_publish' pk=post.pk %}">
+                <button class="btn-default">Publish</button>
+            </a>
         {% endif %}
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
-        <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+        <a href="{% url 'add_comment_to_post' pk=post.pk %}">
+            <button class="btn-default">Add comment</button>
+        </a>
         <hr>
         {% for comment in post.comments.all %}
             {% if user.is_authenticated or comment.approved_comment %}
@@ -29,11 +35,11 @@
                 <div class="date">
                     {{ comment.created_date }}
                     {% if not comment.approved_comment %}
-                        <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}">
-                            <span class="glyphicon glyphicon-remove"></span>
+                        <a href="{% url 'comment_remove' pk=comment.pk %}">
+                            <button class="btn-default">Remove</button>
                         </a>
-                        <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}">
-                            <span class="glyphicon glyphicon-ok"></span>
+                        <a href="{% url 'comment_approve' pk=comment.pk %}">
+                            <button class="btn-default">Approve</button>
                         </a>
                     {% endif %}
                 </div>
